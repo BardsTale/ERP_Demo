@@ -1,0 +1,91 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.4.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+group = 'com.TestReport'
+version = ''
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	//타임리프
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	// thymeleaf-layout-dialect 타임리프 레이아웃
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+	
+	//스프링 부트 스타터 셋
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	
+	//Spring boot AOP
+	compile 'org.springframework.boot:spring-boot-starter-aop'
+
+	//스프링부트 내장 톰캣	
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+
+	//MyBatis
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.3'
+	
+	//롬북
+	compileOnly 'org.projectlombok:lombok'
+	//롬북 어노테이션
+	annotationProcessor 'org.projectlombok:lombok'
+	
+	//DevTools
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	
+	//Oracle JDBC
+	//implementation 'com.oracle.database.jdbc:ojdbc8'
+	//compile group: 'com.oracle.ojdbc', name: 'orai18n', version: '19.3.0.0'
+
+	//MySQL
+	compileOnly 'mysql:mysql-connector-java:5.1.46'
+	//implementation 'mysql:mysql-connector-java'
+
+	// json simple
+	compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
+		
+	//Redis
+	compile 'org.springframework.boot:spring-boot-starter-data-redis'
+	compile 'org.springframework.session:spring-session-data-redis'
+	compile 'redis.clients:jedis'
+	
+	//log4j
+	compile 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4:1.16'
+
+	//Poi Excel
+	compile group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.2'	
+	
+	//Apache fileUpload
+	compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.2'
+	
+	/* 아직 안쓰는 라이브러리들 */
+	// gson
+	compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
+	
+	
+	//jwt 인증 *아직 안씀
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+	
+	
+	//Junit 관련 선언
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	
+}
+
+test {
+	useJUnitPlatform()
+}
