@@ -23,16 +23,16 @@
 hs_err_pid*
 
 #bin 예하 제외
-bin/
+*/bin/
 
 #properties 제외
 *.properties
 
 #Help 파일 제외
-HELP.md
+*/HELP.md
 
 #gradle 관련
-.gradle/
+*/.gradle/
 
 #eclipse 관련
-.settings/
+*/.settings/
