@@ -22,5 +22,14 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-#properties
+#properties 제외
 *.properties
+
+#Help 파일 제외
+HELP.md
+
+#gradle 관련
+.gradle/
+
+#eclipse 관련
+.settings/
